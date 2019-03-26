@@ -70,3 +70,30 @@ earthQuake('10th and Lorrain');
 tornado('10th St and James');
 
 rockSlide('10th and Blanco');
+
+function correctMovement(arr) {
+  let totalMovement = 0;
+  let filteredArr = arr
+    .filter(nums => nums[0] > 0 && nums[1] > 0)
+    .map(nums => nums[0] += nums[1]);
+  // filter negative array numbers (either first or second is negative)
+  filteredArr.forEach(elem => console.log(elem));
+}
+
+console.log(correctMovement([[-1, 3], [2, 3], [3, 1]]));
+
+const string = 'noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest';
+
+const arr = string.split(' ');
+
+const reducer = arr.reduce((acc, word) => {
+  if(word.length === 3) {
+    acc += ' ';
+    console.log(acc);
+  } else {
+    acc += word[word.length - 1].toUpperCase();
+  }
+  return acc;
+}, '');
+
+console.log(reducer);
